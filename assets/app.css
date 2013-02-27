@@ -4,22 +4,6 @@ body {
   padding: 0;
 }
 
-button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 100%;
-  vertical-align: baseline;
-  font-family: inherit;
-  color: inherit;
-  -webkit-appearance: none;
-  /*-moz-appearance: none;*/
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-}
-
 body {
   font: 14px 'Dancing Script', cursive, Helvetica, Arial, sans-serif;
   line-height: 1.4em;
@@ -95,6 +79,11 @@ body {
   border-top-right-radius: 1px;
 }
 
+#button-wrapper {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 #new-paragraph,
 .edit {
   position: relative;
@@ -134,7 +123,6 @@ body {
   z-index: 2;
   border-top: 1px dotted #adadad;
 }
-
 
 #paragraph-list {
   margin: 0;
@@ -176,7 +164,6 @@ body {
   -o-transition: color 0.4s;
   transition: color 0.4s;
 }
-
 
 #paragraph-list li .destroy {
   display: none;
@@ -220,6 +207,29 @@ body {
 
 #paragraph-list li.editing:last-child {
   margin-bottom: -1px;
+}
+
+button#add-paragraph {
+  font-size: 15px;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 5px;
+}
+
+button.destroy {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: 'Arial';
+  color: inherit;
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }
 
 #info {
