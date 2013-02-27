@@ -14,16 +14,22 @@
     </header>
     <section id="main">
       <ul id="paragraph-list"></ul>
-      <textarea id="new-paragraph" placeholder="Write a new paragraph for your story" autofocus></textarea>
+      <textarea id="new-paragraph" placeholder="Write a new paragraph for your story (pictures below are just here to inspire you)" autofocus></textarea>
       <div id="button-wrapper">
         <button id="add-paragraph">Add</button>
       </div>
+      <ul id="pictures">
+      </ul>
     </section>
   </section>
   <div id="info">
     <p>Written by <a href="https://github.com/Florent2">Florent</a>, base code from <a href="https://github.com/addyosmani/todomvc/tree/gh-pages/architecture-examples/backbone">TodoMVC Backbone.js</a></p>
   </div>
 
+
+  <script type="text/template" id="picture-template">
+    <img src="<%- url %>" class="picture"/>
+  </script>
 
   <script type="text/template" id="paragraph-template">
     <div class="view">
@@ -41,8 +47,11 @@
   <script src="js/lib/jquery.autosize-min.js"></script>
 
   <script src="js/models/paragraph.js"></script>
+  <script src="js/models/picture.js"></script>
   <script src="js/collections/story.js"></script>
+  <script src="js/collections/pictures.js"></script>
   <script src="js/views/paragraph.js"></script>
+  <script src="js/views/picture.js"></script>
   <script src="js/views/app.js"></script>
 
   <script src="js/app.js"></script>

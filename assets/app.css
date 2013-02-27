@@ -231,6 +231,23 @@ button.destroy {
   appearance: none;
 }
 
+ul#pictures {
+  text-align: center;
+}
+ul#pictures li {
+  display: inline;
+  list-style-type: none;
+}
+img.picture {
+  width: 50px;
+  height: 50px;
+}
+img.picture:hover {
+  max-width: 500px;
+  width: auto;
+  height: auto;
+}
+
 #info {
   color: #a6a6a6;
   font-size: 12px;

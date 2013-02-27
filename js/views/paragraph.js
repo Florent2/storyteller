@@ -50,4 +50,4 @@ app.ParagraphView = Backbone.View.extend({
   clear: function() {
     this.model.destroy();
   }
-})
+});

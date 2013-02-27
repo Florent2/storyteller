@@ -9,14 +9,16 @@ app.AppView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.$textarea = this.$('#new-paragraph');
+    this.$textarea       = this.$('#new-paragraph');
     this.$paragraphList  = this.$('#paragraph-list');
+    this.$pictures       = this.$('#pictures');
 
     this.listenTo(app.Story, 'add',   this.addParagraph);
     this.listenTo(app.Story, 'reset', this.addAllParagraphs);
     this.listenTo(app.Story, 'all',   this.render);
 
     app.Story.fetch();
+    this.displayPictures();
   },
 
   render: function() {
@@ -29,11 +31,11 @@ app.AppView = Backbone.View.extend({
 
   addParagraph: function( paragraph ) {
                   var view = new app.ParagraphView({ model: paragraph });
-                  $('#paragraph-list').append( view.render().el );
+                  this.$paragraphList.append( view.render().el );
                 },
 
   addAllParagraphs: function() {
-                      this.$('#paragraph-list').html('');
+                      this.$paragraphList.html('');
                       app.Story.each(this.addParagraph, this);
                     },
 
@@ -50,5 +52,32 @@ app.AppView = Backbone.View.extend({
                      }
                      app.Story.create( this.newAttributes() );
                      this.$textarea.val('');
+                     this.displayPictures();
                    },
+
+  displayPicture:  function(picture) {
+                     var view = new app.PictureView({ model: picture });
+                     this.$pictures.append( view.render().el );
+                   },
+
+  displayPictures: function() {
+                     this.$pictures.html('');
+                     app.Pictures.reset();
+
+                     that = this;
+                     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+                       {
+                         tags:    "beautiful",
+                         tagmode: "any",
+                         format:  "json",
+                       },
+                       function(data) {
+                         for(i = 0; i < 9; i++) {
+                           picture = new app.Picture({url: data.items[i].media.m});
+                           app.Pictures.add(picture);
+                         }
+                         app.Pictures.each(that.displayPicture, that);
+                       }
+                    );
+                   }
 });
