@@ -18,18 +18,19 @@ app.ParagraphView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html( this.template( this.model.toJSON() ) );
-    this.$input = this.$('.edit');
+    var html = this.template( this.model.toJSON() );
+    this.$el.html(html);
+    this.$textarea = this.$('.edit');
     return this;
   },
 
   edit: function() {
     this.$el.addClass('editing');
-    this.$input.focus();
+    this.$textarea.focus();
   },
 
   close: function() {
-    var value = this.$input.val().trim();
+    var value = this.$textarea.val().trim();
 
     if ( value ) {
       this.model.save({ content: value });

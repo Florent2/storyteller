@@ -57,11 +57,11 @@ body {
   height: 100%;
 }
 
-#storyteller input::-webkit-input-placeholder {
+#storyteller textarea::-webkit-input-placeholder {
   font-style: italic;
 }
 
-#storyteller input:-moz-placeholder {
+#storyteller textarea:-moz-placeholder {
   font-style: italic;
   color: #a9a9a9;
 }

@@ -5,11 +5,11 @@ app.AppView = Backbone.View.extend({
   el: '#storyteller',
 
   events: {
-    'keypress #new-paragraph': 'createOnEnter',
+    'click #add-paragraph': 'createParagraph',
   },
 
   initialize: function() {
-    this.$input = this.$('#new-paragraph');
+    this.$textarea = this.$('#new-paragraph');
     this.$paragraphList  = this.$('#paragraph-list');
 
     this.listenTo(app.Story, 'add',   this.addParagraph);
@@ -39,16 +39,16 @@ app.AppView = Backbone.View.extend({
 
   newAttributes: function() {
                    return {
-                     content: this.$input.val().trim(),
+                     content: this.$textarea.val().trim(),
                      order:   app.Story.nextOrder()
                    }
                  },
 
-  createOnEnter: function( event ) {
-                   if ( event.which !== ENTER_KEY || !this.$input.val().trim() ) {
-                     return;
-                   }
-                   app.Story.create( this.newAttributes() );
-                   this.$input.val('');
-                 },
+  createParagraph: function( event ) {
+                     if ( !this.$textarea.val().trim() ) {
+                       return;
+                     }
+                     app.Story.create( this.newAttributes() );
+                     this.$textarea.val('');
+                   },
 });

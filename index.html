@@ -13,7 +13,8 @@
     </header>
     <section id="main">
       <ul id="paragraph-list"></ul>
-      <input id="new-paragraph" placeholder="Write a new paragraph for your story" autofocus>
+      <textarea id="new-paragraph" placeholder="Write a new paragraph for your story" autofocus></textarea>
+      <button id="add-paragraph">Add</button>
     </section>
   </section>
   <div id="info">
@@ -27,13 +28,14 @@
       <label><%- content %></label>
       <button class="destroy"></button>
     </div>
-    <input class="edit" value="<%- content %>">
+    <textarea class="edit" value="<%- content %>"/></textarea>
   </script>
 
   <script src="js/lib/jquery.min.js"></script>
   <script src="js/lib/underscore-min.js"></script>
   <script src="js/lib/backbone-min.js"></script>
   <script src="js/lib/backbone.localStorage-min.js"></script>
+  <script src="js/lib/jquery.autosize-min.js"></script>
 
   <script src="js/models/paragraph.js"></script>
   <script src="js/collections/story.js"></script>
