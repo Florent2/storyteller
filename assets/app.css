@@ -29,13 +29,9 @@ body {
         0 25px 50px 0 rgba(0, 0, 0, 0.15);
 }
 
-#storyteller textarea::-webkit-input-placeholder {
+#storyteller textarea {
+  height: 70px;
   font-style: italic;
-}
-
-#storyteller textarea:-moz-placeholder {
-  font-style: italic;
-  color: #a9a9a9;
 }
 
 #storyteller h1 {
@@ -215,6 +211,9 @@ button#add-paragraph {
   color: inherit;
   border-radius: 5px;
 }
+button#add-paragraph:hover {
+  cursor: pointer;
+}
 
 button.destroy {
   margin: 0;
@@ -233,7 +232,6 @@ button.destroy {
 }
 
 #info {
-  margin: 65px auto 0;
   color: #a6a6a6;
   font-size: 12px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
