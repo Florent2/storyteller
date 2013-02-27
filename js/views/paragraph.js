@@ -6,9 +6,6 @@ app.ParagraphView = Backbone.View.extend({
   template: _.template( $('#paragraph-template').html() ),
 
   events: {
-    'dblclick label': 'edit',
-    'keypress .edit': 'updateOnEnter',
-    'blur     .edit': 'close',
     'click .destroy': 'clear'
   },
 
@@ -24,11 +21,6 @@ app.ParagraphView = Backbone.View.extend({
     return this;
   },
 
-  edit: function() {
-    this.$el.addClass('editing');
-    this.$textarea.focus();
-  },
-
   close: function() {
     var value = this.$textarea.val().trim();
 
@@ -36,14 +28,6 @@ app.ParagraphView = Backbone.View.extend({
       this.model.save({ content: value });
     } else {
       this.clear();
-    }
-
-    this.$el.removeClass('editing');
-  },
-
-  updateOnEnter: function( e ) {
-    if ( e.which === ENTER_KEY ) {
-      this.close();
     }
   },
 

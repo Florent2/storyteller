@@ -2,7 +2,7 @@
 
 A small JavaScript app to write stories. It displays random images from Flickr on each new paragraph, so that you get some inspiration :)
 
-Created for the [FrontDevCourse](http://frontdevcourse.com/).
+Created for the [FrontDevCourse](http://frontdevcourse.com/) course.
 
 ## TODOS
 
