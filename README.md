@@ -8,6 +8,8 @@ An experiment that should deserve more effort from my part...
 
 Tested only on Chrome.
 
+[Demo](http://dl.dropbox.com/u/4360625/storyteller/index.html)
+
 ## TODOS
 
 * allow edition of an existing paragraph
