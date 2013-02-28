@@ -65,11 +65,11 @@ app.AppView = Backbone.View.extend({
                      app.Pictures.reset();
 
                      that = this;
-                     var tag1 = _.shuffle(["beautiful", "gorgeous", "best"])[0];
-                     var tag2 = _.shuffle(["nature", "people", "art", "city"])[0];
+                     var tag1 = _.shuffle(["australia", "california", "europe", "france", "india", "japan"])[0];
+                     var tag2 = _.shuffle(["nature", "character", "art", "city"])[0];
                      $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
                        {
-                         tags:    [tag1, tag2].join(", "),
+                         tags:    ["beautiful", tag1, tag2].join(", "),
                          format:  "json",
                        },
                        function(data) {
