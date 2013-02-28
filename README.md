@@ -4,6 +4,10 @@ A small JavaScript app to write stories. It displays random images from Flickr o
 
 Created for the [FrontDevCourse](http://frontdevcourse.com/) course.
 
+An experiment that should deserve more effort from my part...
+
+Tested only on Chrome.
+
 ## TODOS
 
 * allow edition of an existing paragraph
